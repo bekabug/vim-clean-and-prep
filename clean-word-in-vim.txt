@@ -1,0 +1,77 @@
+Sometimes I get these Word docs that need to be used in WordPress or PHPlist. Sending out mass attachments is a huge no-no so I needed a way to quickly clean these things up in vim. I’m sure there are other tools out there that could do this in one or two clicks but vim is now a major part of my workflow.
+
+:set fileencoding=utf-8
+" Leave Latin-1 behind, set to UTF-8
+
+:%s/[\u0026]\{1}/\&amp;/g
+" Convert ampersands
+
+:%s/[\u2026]\{1}/\&hellip;/g
+" Convert elipses
+
+:%s/[\u201C]/\&ldquo;/g
+" Convert double quotes, left
+
+:%s/[\u201D]/\&rdquo;/g
+" Convert double quotes, right
+
+:%s/[\u2018]/\&lsquo;/g
+" Convert single quotes, left
+
+:%s/[\u2019]/\&rsquo;/g
+" Convert single quotes, right
+
+:%s/[\u2013]/\&ndash;/g
+" Convert N Dashes
+
+:%s/--/\&ndash;/g
+" Convert double dashes to N Dashes
+
+:%s/.  /. /g
+" Remove double spaces after periods
+
+:%s/.   /. /g
+" Remove triple spaces after periods
+
+:%s/.[\uA0]\{2}/./g
+" Remove double non-breaking spaces after periods
+
+:%s/.[\uA0]\{1}/./g
+" Remove single non-breaking spaces after periods
+
+
+:%s/[\u0026]\{1}/\&amp;/g
+" Convert ampersands
+
+:%s/[\u2026]\{1}/\&hellip;/g
+" Convert elipses
+
+:%s/[\u201C]/\&ldquo;/g
+" Convert double quotes, left
+
+:%s/[\u201D]/\&rdquo;/g
+" Convert double quotes, right
+
+:%s/[\u2018]/\&lsquo;/g
+" Convert single quotes, left
+
+:%s/[\u2019]/\&rsquo;/g
+" Convert single quotes, right
+
+:%s/[\u2013]/\&ndash;/g
+" Convert N Dashes
+
+:%s/--/\&ndash;/g
+" Convert double dashes to N Dashes
+
+:%s/.  /. /g
+" Remove double spaces after periods
+
+:%s/.   /. /g
+" Remove triple spaces after periods
+
+:%s/.[\uA0]\{2}/./g
+" Remove double non-breaking spaces after periods
+
+:%s/.[\uA0]\{1}/./g
+" Remove single non-breaking spaces after periods
