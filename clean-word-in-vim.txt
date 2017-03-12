@@ -40,23 +40,41 @@ press Enter
 :%s/[\u0026]\{1}/\&amp;/g
 " Convert ampersands from unicode to HTML
 
+:%s/&\{1}/\&amp;/g
+" Convert ampersands from ASCII to HTML
+
 :%s/[\u2026]\{1}/\&hellip;/g
 " Convert elipses from unicode to HTML
 
 :%s/[\u201C]/\&ldquo;/g
 " Convert double quotes, left from unicode to HTML
 
+:%s/“/\&ldquo;/g
+" Convert double quotes, left from ASCII to HTML
+
 :%s/[\u201D]/\&rdquo;/g
 " Convert double quotes, right from unicode to HTML
+
+:%s/”/\&rdquo;/g
+" Convert double quotes, right from ASCII to HTML
 
 :%s/[\u2018]/\&lsquo;/g
 " Convert single quotes, left from unicode to HTML
 
+:%s/‘/\&lsquo;/g
+" Convert single quotes, left from ASCII to HTML
+
 :%s/[\u2019]/\&rsquo;/g
 " Convert single quotes, right from unicode to HTML
 
+:%s/’/\&rsquo;/g
+" Convert single quotes, right from ASCII to HTML
+
 :%s/[\u2013]/\&ndash;/g
 " Convert N Dashes from unicode to HTML
+
+:%s/–/\&ndash;/g
+" Convert N Dashes from ASCII to HTML
 
 :%s/--/\&ndash;/g
 " Convert double dashes to N Dashes from unicode to HTML
@@ -72,6 +90,12 @@ press Enter
 
 :%s/[\uA0]\{1}/ /g
 " Remove single non-breaking spaces
+
+:%s/ \{2}/ /g
+" Remove double non-breaking ASCII spaces
+
+:%s/ \{1}/ /g
+" Remove single non-breaking ASCII spaces
 
 :%s/.*<//
 " Delete everything in front of < ex: name <name@domain.com> produces name@domain.com>
